@@ -1,0 +1,62 @@
+.checkout-steps {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 2rem auto;
+  position: sticky;
+  width: fit-content;
+}
+
+.circle {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: #ccc;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  transition: background-color 0.5s ease;
+  z-index: 1;
+}
+
+.circle.active {
+  background-color: #28a745; /* green */
+  box-shadow: 0 0 10px #28a745;
+}
+
+.circle.completed {
+  background-color: #28a745;
+}
+
+.line {
+  height: 4px;
+  width: 60px;
+  background-color: #ccc;
+  transition: background-color 0.5s ease-in-out, width 0.5s ease-in-out;
+  position: relative;
+  z-index: 0;
+}
+
+.line-filled {
+  background-color: #28a745;
+}
+
+.line-active::before {
+  content: "";
+  position: absolute;
+  height: 100%;
+  width: 0%;
+  background-color: #28a745;
+  animation: fillLine 0.5s forwards ease-in-out;
+}
+
+@keyframes fillLine {
+  from {
+    width: 0%;
+  }
+  to {
+    width: 100%;
+  }
+}
