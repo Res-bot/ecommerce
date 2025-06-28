@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
 import { toast, ToastContainer } from 'react-toastify';
-import { Modal, Button } from 'react-bootstrap';
+import { Modal } from 'react-bootstrap';
 import LoginRegisterForm from '../features/auth/LoginRegisterForm';
 import 'react-toastify/dist/ReactToastify.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -9,7 +9,6 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 const RegisterPage = () => {
   const navigate = useNavigate();
   const location = useLocation();
-
   const [show, setShow] = useState(true); // Always show modal when navigating to this page
 
   useEffect(() => {
@@ -48,10 +47,6 @@ const RegisterPage = () => {
     }
   };
 
-  const handleOAuthRegister = () => {
-    window.location.href = 'http://localhost:8000/api/auth/oauth/google';
-  };
-
   return (
     <>
       <Modal show={show} onHide={handleClose} centered>
@@ -59,12 +54,7 @@ const RegisterPage = () => {
           <Modal.Title>Register</Modal.Title>
         </Modal.Header>
         <Modal.Body>
-          <div className="d-flex flex-column gap-3">
-            <LoginRegisterForm onSubmit={handleRegister} isRegister={true} />
-            <Button onClick={handleOAuthRegister} className="btn-danger w-100">
-              Register with Google
-            </Button>
-          </div>
+          <LoginRegisterForm onSubmit={handleRegister} isRegister={true} />
         </Modal.Body>
       </Modal>
 

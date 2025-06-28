@@ -1,30 +1,34 @@
 import { useEffect } from 'react';
-import { useNavigate } from 'react-router-dom';
-import {jwtDecode} from 'jwt-decode'; // make sure this package is installed
+import { useDispatch } from 'react-redux';
+import { useNavigate, useLocation } from 'react-router-dom';
+import { login } from '../features/auth/authSlice';
 
 const OAuthSuccess = () => {
+  const dispatch = useDispatch();
   const navigate = useNavigate();
+  const location = useLocation();
 
   useEffect(() => {
-    const urlParams = new URLSearchParams(window.location.search);
-    const token = urlParams.get('token');
-
+    const token = new URLSearchParams(location.search).get('token');
     if (token) {
-      try {
-        const decoded = jwtDecode(token);
-        localStorage.setItem('user', JSON.stringify(decoded));
-        navigate('/');
-      } catch (err) {
-        console.error('Invalid token', err);
-        navigate('/login');
-      }
-    } else {
-      navigate('/login');
+      fetch('http://localhost:8000/api/auth/user', {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      })
+        .then(res => res.json())
+        .then(data => {
+          if (data.name) {
+            dispatch(login({ ...data, token })); // Include token in the payload
+            localStorage.setItem('user', JSON.stringify({ ...data, token }));
+            navigate('/');
+          }
+        })
+        .catch(err => console.error('OAuth login failed', err));
     }
-  }, [navigate]);
+  }, [dispatch, navigate, location.search]);
 
-  return null;
+  return <p>Logging you in...</p>;
 };
 
 export default OAuthSuccess;
-
