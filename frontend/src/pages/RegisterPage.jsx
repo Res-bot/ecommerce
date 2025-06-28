@@ -9,17 +9,17 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 const RegisterPage = () => {
   const navigate = useNavigate();
   const location = useLocation();
-  const [show, setShow] = useState(true); // Always show modal when navigating to this page
+  const [show, setShow] = useState(true); 
 
   useEffect(() => {
     if (!location.state?.openModal) {
-      navigate('/'); // Prevent direct access without state
+      navigate('/'); 
     }
   }, [location.state, navigate]);
 
   const handleClose = () => {
     setShow(false);
-    navigate('/'); // Redirect to home after closing
+    navigate('/'); 
   };
 
   const handleRegister = async (form) => {

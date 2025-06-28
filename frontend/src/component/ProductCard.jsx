@@ -7,7 +7,7 @@ import './ProductCard.css';
 
 const ProductCard = ({ product }) => {
   const dispatch = useDispatch();
-  const [qty, setQty] = useState(1); // Default to 1 for valid initial quantity
+  const [qty, setQty] = useState(1); 
   const [isAdded, setIsAdded] = useState(false);
 
   const handleAddToCart = () => {
@@ -23,7 +23,7 @@ const ProductCard = ({ product }) => {
   const increaseQty = () => setQty(qty + 1);
   const decreaseQty = () => setQty(qty > 1 ? qty - 1 : 1);
 
-  // ✅ Construct image URL
+  
   const imageUrl = `http://localhost:8000/uploads/${product.image}`;
 
   return (

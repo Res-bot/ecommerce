@@ -1,7 +1,7 @@
 import jwt from 'jsonwebtoken';
 import User from '../models/User.js';
 
-// ✅ Protect: checks if token is valid and attaches user to request
+
 export const protect = async (req, res, next) => {
   const token = req.headers.authorization?.split(' ')[1];
   if (!token) return res.status(401).json({ message: 'Unauthorized' });
@@ -15,7 +15,7 @@ export const protect = async (req, res, next) => {
   }
 };
 
-// ✅ Admin Middleware: only allows if user is admin
+
 export const adminMiddleware = (req, res, next) => {
   if (req.user && req.user.role === 'admin') {
     next();

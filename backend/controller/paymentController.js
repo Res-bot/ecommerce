@@ -1,4 +1,4 @@
-// Simulated payment processing
+
 export const initiatePayment = (req, res) => {
     res.json({ success: true, paymentId: 'mock12345' });
   };

@@ -21,4 +21,4 @@ const fileFilter = (req, file, cb) => {
 
 const upload = multer({ storage, fileFilter });
 
-export default upload; // ✅ This enables import upload from ...
+export default upload; 

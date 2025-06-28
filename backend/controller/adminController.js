@@ -3,7 +3,7 @@ import Order from '../models/Order.js';
 import path from 'path';
 import fs from 'fs';
 
-// POST /api/admin/add-product
+
 export const addProduct = async (req, res) => {
   try {
     const { name, price, description, category } = req.body;
@@ -29,7 +29,7 @@ export const addProduct = async (req, res) => {
   }
 };
 
-// GET /api/admin/orders
+
 export const getOrders = async (req, res) => {
   try {
     const orders = await Order.find().populate('user');

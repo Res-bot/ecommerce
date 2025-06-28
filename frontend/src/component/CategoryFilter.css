@@ -1,6 +1,6 @@
 .category-filter-container {
   display: flex;
-  flex-wrap: wrap; /* Changed from overflow-x to wrap */
+  flex-wrap: wrap; 
   gap: 1rem;
   padding: 0.5rem 1rem;
   margin-bottom: 1rem;
@@ -9,7 +9,7 @@
   
   .category-button {
     padding: 0.5rem 1rem;
-    border-radius: 9999px; /* Fully rounded */
+    border-radius: 9999px; 
     border: 1px solid #d1d5db;
     background-color: #ffffff;
     color: #1f2937;

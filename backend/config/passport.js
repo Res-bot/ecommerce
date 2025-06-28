@@ -15,15 +15,15 @@ passport.use(
     },
     async (req, accessToken, refreshToken, profile, done) => {
       try {
-        // Check if user exists
+        
         let user = await User.findOne({ email: profile.emails[0].value });
 
         if (!user) {
-          // Create new user if doesn't exist
+          
           user = await User.create({
             name: profile.displayName,
             email: profile.emails[0].value,
-            password: profile.id, // Using Google ID as password
+            password: profile.id, 
             isOAuth: true,
             role: 'user'
           });

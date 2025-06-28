@@ -8,4 +8,4 @@ const router = express.Router();
 router.post('/add-product', upload.single('image'), addProduct);
 router.get('/orders', protect, adminMiddleware, getOrders);
 
-export default router; // ✅ use ES module export
+export default router; 

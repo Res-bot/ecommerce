@@ -5,6 +5,6 @@ import { protect } from '../middleware/authMiddleware.js';
 const router = express.Router();
 
 router.get('/profile', protect, getProfile);
-router.get('/', protect, getAllUsers); // You might restrict this to admin in a real app
+router.get('/', protect, getAllUsers); 
 
 export default router;

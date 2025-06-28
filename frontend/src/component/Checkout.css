@@ -22,7 +22,7 @@
 }
 
 .circle.active {
-  background-color: #28a745; /* green */
+  background-color: #28a745; 
   box-shadow: 0 0 10px #28a745;
 }
 

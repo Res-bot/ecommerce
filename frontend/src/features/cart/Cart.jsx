@@ -3,7 +3,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import { removeFromCart } from '../../features/cart/cartSlice';
 import { toast } from 'react-toastify';
 import { useNavigate } from 'react-router-dom';
-import CheckoutSteps from '../../component/Checkout'; // Adjust path if needed
+import CheckoutSteps from '../../component/Checkout'; 
 import './Cart.css';
 
 const Cart = () => {
@@ -19,7 +19,7 @@ const Cart = () => {
       toast.error('Please log in to place an order!');
       return;
     }
-    navigate('/address'); // Navigate to the address page
+    navigate('/address'); 
   };
 
   return (

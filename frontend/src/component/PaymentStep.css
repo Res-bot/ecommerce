@@ -1,4 +1,4 @@
-/* paymentStep.css */
+
 .payment-page-container {
   display: flex;
   flex-direction: column;
@@ -34,7 +34,7 @@
   margin-bottom: 1rem;
 }
 
-/* Animation */
+
 @keyframes slideFadeIn {
   from {
     opacity: 0;

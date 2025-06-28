@@ -59,10 +59,6 @@ app.use('/api/payment', paymentRoutes);
 app.use('/api/orders', orderRoutes);
 app.use('/api/admin', adminRoutes);
 
-// Health check
-app.get('/api/health', (req, res) => {
-  res.status(200).json({ status: 'OK' });
-});
 
 const PORT = process.env.PORT || 8000;
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`));

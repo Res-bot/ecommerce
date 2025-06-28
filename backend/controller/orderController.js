@@ -13,7 +13,7 @@ export const confirmOrder = async (req, res) => {
     paymentStatus: 'Paid',
   });
 
-  await Cart.deleteOne({ user: req.user._id }); // Clear cart after order
+  await Cart.deleteOne({ user: req.user._id }); 
 
   res.json(order);
 };

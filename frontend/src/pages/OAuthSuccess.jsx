@@ -19,7 +19,7 @@ const OAuthSuccess = () => {
         .then(res => res.json())
         .then(data => {
           if (data.name) {
-            dispatch(login({ ...data, token })); // Include token in the payload
+            dispatch(login({ ...data, token })); 
             localStorage.setItem('user', JSON.stringify({ ...data, token }));
             navigate('/');
           }

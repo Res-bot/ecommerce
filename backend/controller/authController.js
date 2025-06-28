@@ -47,8 +47,6 @@ export const login = async (req, res) => {
 
 export const logout = async (req, res) => {
   try {
-    // Invalidate token if using JWT blacklist
-    // Or clear session if using sessions
     res.status(200).json({ message: 'Logged out successfully' });
   } catch (error) {
     res.status(500).json({ message: "Logout failed", error: error.message });

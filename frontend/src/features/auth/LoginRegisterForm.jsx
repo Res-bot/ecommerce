@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Form, Button } from 'react-bootstrap'; // make sure to import Bootstrap components
+import { Form, Button } from 'react-bootstrap'; 
 
 const LoginRegisterForm = ({ onSubmit, isRegister }) => {
   const [form, setForm] = useState({

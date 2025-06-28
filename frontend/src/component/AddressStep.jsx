@@ -1,7 +1,7 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Button, Form, Card } from 'react-bootstrap';
-import CheckoutSteps from './Checkout'; // Adjust path if needed
+import CheckoutSteps from './Checkout'; 
 import './AddressStep.css';
 
 function AddressPage() {

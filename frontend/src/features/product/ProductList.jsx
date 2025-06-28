@@ -11,11 +11,10 @@ const ProductList = () => {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
-  // Fetch products from backend API
   useEffect(() => {
     const fetchProducts = async () => {
       try {
-        const response = await axios.get('http://localhost:8000/api/products'); // Adjust to your backend port
+        const response = await axios.get('http://localhost:8000/api/products'); 
         setProducts(response.data);
         setLoading(false);
       } catch (err) {
@@ -28,7 +27,7 @@ const ProductList = () => {
     fetchProducts();
   }, []);
 
-  // Filter logic
+
   const categories = ['All', ...getUniqueCategories(products)];
   const filteredProducts =
     selectedCategory === 'All'
